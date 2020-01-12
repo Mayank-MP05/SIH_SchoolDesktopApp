@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./backend/css/homepage.css" />
+    <title>DataSync - Govt of Sikkim</title>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <script>
+      window.onload = function() {
+        var chart = new CanvasJS.Chart("BarchartContainer", {
+          animationEnabled: true,
+          exportEnabled: true,
+          theme: "light1", // "light1", "light2", "dark1", "dark2"
+          title: {
+            text: "Simple Column Chart with Index Labels"
+          },
+          data: [
+            {
+              type: "column", //change type to bar, line, area, pie, etc
+              //indexLabel: "{y}", //Shows y value on all Data Points
+              indexLabelFontColor: "#5A5757",
+              indexLabelPlacement: "outside",
+              dataPoints: [
+                { x: 10, y: 71 },
+                { x: 20, y: 55 },
+                { x: 30, y: 50 },
+                { x: 40, y: 65 },
+                { x: 50, y: 92, indexLabel: "Highest" },
+                { x: 60, y: 68 },
+                { x: 70, y: 38 },
+                { x: 80, y: 71 },
+                { x: 90, y: 54 },
+                { x: 100, y: 60 },
+                { x: 110, y: 36 },
+                { x: 120, y: 49 },
+                { x: 130, y: 21, indexLabel: "Lowest" }
+              ]
+            }
+          ]
+        });
+        chart.render();
+
+        var chart2 = new CanvasJS.Chart("PiechartContainer", {
+          animationEnabled: true,
+          title: {
+            text: "Desktop Search Engine Market Share - 2016"
+          },
+          data: [
+            {
+              type: "pie",
+              startAngle: 240,
+              yValueFormatString: '##0.00"%"',
+              indexLabel: "{label} {y}",
+              dataPoints: [
+                { y: 79.45, label: "Google" },
+                { y: 7.31, label: "Bing" },
+                { y: 7.06, label: "Baidu" },
+                { y: 4.91, label: "Yahoo" },
+                { y: 1.26, label: "Others" }
+              ]
+            }
+          ]
+        });
+        chart2.render();
+      };
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Govt Of Sikkim</a>
+
+      <form class="form-inline my-2 my-lg-0">
+        <label id="netStatus" class="badge badge-pill"></label>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Sync Now
+        </button>
+      </form>
+    </nav>
+
+    <!-- Application Body Starts Here -->
+
+    <div class="container bgclass">
+      <div class="row">
+        <div class="col-7">
+          <div id="BarchartContainer" style="height: 300px; width: 100%;"></div>
+        </div>
+        <div class="col-5">
+          <div class="card crudcard">
+            <img
+              class="card-img-top m-auto"
+              src="./backend/img/student-icon.png"
+              alt="Card image cap"
+              style="float:left"
+            />
+            <div class="card-body" style="float: right;">
+              <h5 class="card-title">Student Information Database</h5>
+              <p class="card-text">
+                This Database consist of Information of all students including
+                their academic records and is very useful for the purpose of
+                central data analysis
+              </p>
+              <a href="./studCRUD.html" class="btn btn-primary"
+                >Go to Students DB</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-5">
+          <div id="PiechartContainer" style="height: 300px; width: 100%;"></div>
+        </div>
+        <div class="col-7">
+          <div class="card crudcard">
+            <div class="card-body" style="float: left;">
+              <h5 class="card-title">Teacher Information Database</h5>
+              <p class="card-text">
+                This Database will take you to each teacher working in this
+                ecosysstem and is very useful for efficient maintaining and
+                taking valuable insights of the Raw data
+              </p>
+              <a href="./teachCRUD.html" class="btn btn-primary"
+                >Go to Teachers DB</a
+              >
+            </div>
+            <img
+              class="card-img-top m-auto"
+              src="./backend/img/teacher-icon.png"
+              alt="Card image cap"
+              style="float: right;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="bottom">
+      <h4>&copy Created by Team X-Distaster</h4>
+    </nav>
+    <script src="./backend/js/netCheck.js"></script>
+  </body>
+</html>

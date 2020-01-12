@@ -1,0 +1,38 @@
+#netStatus {
+  margin: 10px;
+}
+
+.crudcard {
+  min-width: 100%;
+}
+
+.bgclass {
+  /*background-image: url("./../img/classroom-baclground.jpg");
+  background-size: cover;*/
+}
+
+.card-img-top {
+  height: 250px;
+  width: 250px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  min-height: 90%;
+  margin: auto;
+}
+
+.bottom {
+  background-color: #f8f9fa !important;
+  color: black;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.bottom > h4 {
+  margin: auto;
+  margin-right: 0;
+}

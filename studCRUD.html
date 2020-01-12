@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Student Database
+    </title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./backend/css/studCRUD.css" />
+  </head>
+
+  <body>
+    <div class="container bgimg-stud">
+      <h2>Student Database Management System</h2>
+      <form
+        onsubmit="event.preventDefault();onFormSubmit();"
+        autocomplete="off"
+        class="m-auto max40 b-2"
+      >
+        <div class="container m-3">
+          <label>Full Name*</label
+          ><label class="validation-error hide" id="fullNameValidationError"
+            >This field is required.</label
+          >
+          <input type="text" name="fullName" id="fullName" />
+
+          <div>
+            <label>Student UUID</label>
+            <input type="text" name="empCode" id="empCode" />
+          </div>
+          <div>
+            <label>SSC Marks</label>
+            <input type="text" name="sscMarks" id="sscMarks" />
+          </div>
+          <div>
+            <label>HSC Marks</label>
+            <input type="text" name="hscMarks" id="hscMarks" />
+          </div>
+          <div>
+            <select class="form-control" id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <label>City</label>
+            <input type="text" name="city" id="city" />
+          </div>
+          <div class="form-action-buttons">
+            <input class="btn btn-success" type="submit" value="Submit" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container">
+      <table class="list" id="employeeList">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Student UUID</th>
+            <th>SSC Marks</th>
+            <th>HSC Marks</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="./backend/js/StudCRUD.js"></script>
+  </body>
+</html>
