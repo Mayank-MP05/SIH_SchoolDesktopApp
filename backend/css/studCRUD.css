@@ -109,3 +109,17 @@ option {
   color: white;
   background-color: grey;
 }
+
+.right {
+  display: flex;
+  flex-direction: row;
+  right: 0;
+}
+
+.navbar-brand {
+  text-decoration: none;
+}
+
+.right > a {
+  margin: auto;
+}

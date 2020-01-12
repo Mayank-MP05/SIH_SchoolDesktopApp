@@ -14,18 +14,16 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Govt Of Sikkim</a>
+      <a class="navbar-brand" href="./homepage.html">Govt Of Sikkim</a>
 
-      <div class="right">
+      <div class="right  m-2">
         <a href="./studCRUD.html">
-          <button class="btn btn-primary-outline">Student DB</button>
-          ></a
+          <button class="btn btn-outline-primary">Student DB</button> </a
         ><a href="./teachCRUD.html">
-          <button class="btn btn-primary-outline">Teachers DB</button>
-          ></a
-        >
-        <form class="form-inline my-2 my-lg-0">
-          <label id="netStatus" class="badge badge-pill"></label>
+          <button class="btn btn-outline-primary">Teachers DB</button>
+        </a>
+        <form class="form-inline m-2">
+          <label id="netStatus" class="badge badge-pill m-2"></label>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
             Sync Now
           </button>
@@ -33,7 +31,7 @@
       </div>
     </nav>
     <div class="">
-      <h2>Teacher Database Management System</h2>
+      <h2 class="m-3">Teacher Database Management System</h2>
       <div class="row bgimg-teacher">
         <form
           onsubmit="event.preventDefault();onFormSubmit();"
@@ -73,6 +71,8 @@
         </form>
       </div>
     </div>
+
+    <h2 class="m-3">Teacher Database</h2>
     <table class="list" id="employeeList">
       <thead>
         <tr>
