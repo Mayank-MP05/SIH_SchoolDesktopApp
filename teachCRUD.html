@@ -13,14 +13,33 @@
   </head>
 
   <body>
-    <div class="container bgimg-teacher">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Govt Of Sikkim</a>
+
+      <div class="right">
+        <a href="./studCRUD.html">
+          <button class="btn btn-primary-outline">Student DB</button>
+          ></a
+        ><a href="./teachCRUD.html">
+          <button class="btn btn-primary-outline">Teachers DB</button>
+          ></a
+        >
+        <form class="form-inline my-2 my-lg-0">
+          <label id="netStatus" class="badge badge-pill"></label>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Sync Now
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="">
       <h2>Teacher Database Management System</h2>
-      <form
-        onsubmit="event.preventDefault();onFormSubmit();"
-        autocomplete="off"
-        class="m-auto max40 b-2"
-      >
-        <div class="container m-3">
+      <div class="row bgimg-teacher">
+        <form
+          onsubmit="event.preventDefault();onFormSubmit();"
+          autocomplete="off"
+          class="max40 b-2 p-3"
+        >
           <label>Full Name*</label
           ><label class="validation-error hide" id="fullNameValidationError"
             >This field is required.</label
@@ -51,25 +70,25 @@
           <div class="form-action-buttons">
             <input class="btn btn-success" type="submit" value="Submit" />
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-    <div class="container">
-      <table class="list" id="employeeList">
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>UUID Code</th>
-            <th>Age</th>
-            <th>Experience</th>
-            <th>Gender</th>
-            <th>Speciality</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
+    <table class="list" id="employeeList">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>UUID Code</th>
+          <th>Age</th>
+          <th>Experience</th>
+          <th>Gender</th>
+          <th>Speciality</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="./backend/js/netCheck.js"></script>
     <script src="./backend/js/TeachCRUD.js"></script>
   </body>
 </html>

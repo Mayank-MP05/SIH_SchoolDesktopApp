@@ -68,8 +68,8 @@ label.validation-error {
 }
 
 .max40 {
-  min-width: 40%;
-  float: right;
+  /*min-width: 40%;
+  float: right;*/
 }
 
 .bgimg-stud {
@@ -80,4 +80,32 @@ label.validation-error {
 .bgimg-teacher {
   background-size: cover;
   background-image: url("./../img/Teacher-Crud-Background.jpg");
+}
+
+.bgimg-stud > form {
+  min-width: 35%;
+  margin: 20px 30px;
+  background: transparent;
+  left: 10px;
+  border: 10px solid white;
+  color: white;
+  background-color: grey;
+}
+
+label,
+select,
+option {
+  font-size: 20px;
+  text-decoration: bold;
+}
+
+.bgimg-teacher > form {
+  min-width: 35%;
+  margin: 20px 30px;
+  margin-left: 62%;
+  background: transparent;
+  right: 10px;
+  border: 10px solid white;
+  color: white;
+  background-color: grey;
 }
