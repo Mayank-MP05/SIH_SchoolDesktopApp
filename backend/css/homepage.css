@@ -36,3 +36,7 @@
   margin: auto;
   margin-right: 0;
 }
+
+body {
+  overflow: hidden;
+}
