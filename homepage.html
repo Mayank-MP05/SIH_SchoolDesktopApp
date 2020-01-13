@@ -7,7 +7,6 @@
     <!-- update the version number as needed -->
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase/init.js"></script>
 
     <link
       rel="stylesheet"
@@ -163,7 +162,7 @@
       </div>
     </div>
     <nav class="bottom">
-      <h4>&copy Created by Team X-Distaster-X</h4>
+      <h5 class="m-2">&copy Created by Team X-Distaster-X</h5 class="m-2">
     </nav>
     <script src="./backend/js/netCheck.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -182,7 +181,17 @@
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
         try {
-          let app = firebase.app().intializeApp();
+          const firebaseConfig = {
+            apiKey: "AIzaSyAJye_s5ZoTSH2-hjyKMmeNrG21AmcvxT4",
+            authDomain: "sihdatabase.firebaseapp.com",
+            databaseURL: "https://sihdatabase.firebaseio.com",
+            projectId: "sihdatabase",
+            storageBucket: "sihdatabase.appspot.com",
+            messagingSenderId: "638058570525",
+            appId: "1:638058570525:web:8a2514284390e757d5f7f4"
+          };
+          firebase.initializeApp(firebaseConfig);
+          let app = firebase.app();
           let features = ["auth", "database", "messaging", "storage"].filter(
             feature => typeof app[feature] === "function"
           );
@@ -191,6 +200,7 @@
         }
       });
     </script>
+
     <script src="./backend/js/sendToFirebase.js"></script>
   </body>
 </html>

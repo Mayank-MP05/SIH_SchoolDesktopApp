@@ -5,7 +5,6 @@ function onFormSubmit() {
   writeToJSON(0, formData);
   if (selectedRow == null) {
     insertNewRecord(formData);
-    fileDB.STUDENTS.push(formData);
     console.log(fileDB);
     writeItToFile(fileDB);
   } else {
@@ -79,7 +78,9 @@ function updateRecord(formData) {
 }
 
 function onDelete(td) {
-  if (confirm("Are you sure to delete this record ?")) {
+  if (
+    confirm("Are you sure to delete this record ?", "Confirm Delete Warning")
+  ) {
     row = td.parentElement.parentElement;
     document.getElementById("employeeList").deleteRow(row.rowIndex);
 

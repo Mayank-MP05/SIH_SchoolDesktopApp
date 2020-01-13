@@ -3,8 +3,12 @@ var selectedRow = null;
 function onFormSubmit() {
   var formData = readFormData();
   writeToJSON(1, formData);
-  if (selectedRow == null) insertNewRecord(formData);
-  else updateRecord(formData);
+  if (selectedRow == null) {
+    insertNewRecord(formData);
+    console.log(fileDB);
+  } else {
+    updateRecord(formData);
+  }
   resetForm();
 }
 
@@ -101,7 +105,7 @@ function validate() {
 
 window.onload = () => {
   downloadData();
-  
+
   setTimeout(() => {
     getDTeacher();
   }, 150);
