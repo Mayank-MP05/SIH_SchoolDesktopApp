@@ -2,8 +2,15 @@ var selectedRow = null;
 
 function onFormSubmit() {
   var formData = readFormData();
-  if (selectedRow == null) insertNewRecord(formData);
-  else updateRecord(formData);
+  writeToJSON(0, formData);
+  if (selectedRow == null) {
+    insertNewRecord(formData);
+    fileDB.STUDENTS.push(formData);
+    console.log(fileDB);
+    writeItToFile(fileDB);
+  } else {
+    updateRecord(formData);
+  }
   resetForm();
 }
 
@@ -17,7 +24,7 @@ function readFormData() {
   formData["gender"] = document.getElementById("gender").value;
 
   formData["city"] = document.getElementById("city").value;
-  console.log(formData);
+  //console.log(formData);
   return formData;
 }
 
@@ -75,6 +82,7 @@ function onDelete(td) {
   if (confirm("Are you sure to delete this record ?")) {
     row = td.parentElement.parentElement;
     document.getElementById("employeeList").deleteRow(row.rowIndex);
+
     resetForm();
   }
 }
@@ -97,3 +105,11 @@ function validate() {
   return isValid;
 }
 */
+
+window.onload = () => {
+  downloadData();
+
+  setTimeout(() => {
+    getD();
+  }, 150);
+};

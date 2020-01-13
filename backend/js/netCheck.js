@@ -17,3 +17,10 @@ window.addEventListener("offline", function() {
   status.innerHTML = "Offline :(";
   status.className = "badge badge-pill badge-danger";
 });
+
+window.onload = () => {
+  downloadData();
+  setTimeout(() => {
+    upload(fileDB);
+  }, 150);
+};

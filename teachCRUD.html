@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="head">
       <a class="navbar-brand" href="./homepage.html">Govt Of Sikkim</a>
 
       <div class="right  m-2">
@@ -22,12 +22,12 @@
         ><a href="./teachCRUD.html">
           <button class="btn btn-outline-primary m-1">Teachers DB</button>
         </a>
-        <form class="form-inline m-2">
+        <div class="form-inline m-2">
           <label id="netStatus" class="badge badge-pill mx-3"></label>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button class="btn btn-outline-success mx-2" onclick="getDTeacher()">
             Sync Now
           </button>
-        </form>
+        </div>
       </div>
     </nav>
     <div class="">
@@ -89,6 +89,8 @@
     </table>
 
     <script src="./backend/js/netCheck.js"></script>
+    <script src="./index.js"></script>
     <script src="./backend/js/TeachCRUD.js"></script>
+    <script src="./backend/js/database.js"></script>
   </body>
 </html>

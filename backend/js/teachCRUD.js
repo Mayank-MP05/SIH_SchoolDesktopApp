@@ -2,6 +2,7 @@ var selectedRow = null;
 
 function onFormSubmit() {
   var formData = readFormData();
+  writeToJSON(1, formData);
   if (selectedRow == null) insertNewRecord(formData);
   else updateRecord(formData);
   resetForm();
@@ -39,7 +40,7 @@ function insertNewRecord(data) {
   cell4 = newRow.insertCell(5);
   cell4.innerHTML = data.speciality;
   cell4 = newRow.insertCell(6);
-  cell4.innerHTML = `<a onClick="onEdit(this)"><button class="btn btn-warning">Edit</button></a>
+  cell4.innerHTML = `<a onClick="onEdit(this)" href="#head"><button class="btn btn-warning">Edit</button></a>
   <a onClick="onDelete(this)"><button class="btn btn-danger">Delete</button></a>`;
 }
 
@@ -97,3 +98,11 @@ function validate() {
   return isValid;
 }
 */
+
+window.onload = () => {
+  downloadData();
+  
+  setTimeout(() => {
+    getDTeacher();
+  }, 150);
+};

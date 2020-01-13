@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- update the version number as needed -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase/init.js"></script>
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -83,7 +88,10 @@
         </a>
         <form class="form-inline">
           <label id="netStatus" class="badge badge-pill mx-3"></label>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button
+            class="btn btn-outline-success my-2 my-sm-0"
+            onclick="retriveDB()"
+          >
             Sync Now
           </button>
         </form>
@@ -159,5 +167,30 @@
     </nav>
     <script src="./backend/js/netCheck.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="./backend/js/database.js"></script>
+    <script src="./index.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app().intializeApp();
+          let features = ["auth", "database", "messaging", "storage"].filter(
+            feature => typeof app[feature] === "function"
+          );
+        } catch (e) {
+          console.error(e);
+        }
+      });
+    </script>
+    <script src="./backend/js/sendToFirebase.js"></script>
   </body>
 </html>
